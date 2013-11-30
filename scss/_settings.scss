@@ -6,6 +6,7 @@
 // @import "foundation/functions";
 
 // $experimental: true;
+$include-open-sans: false !default;
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with brower-based text zoom or user-set defaults.
@@ -30,8 +31,8 @@
 
 // $include-html-grid-classes: $include-html-classes;
 
-// $row-width: rem-calc(1000);
-// $column-gutter: rem-calc(30);
+ $row-width: rem-calc(100%);
+ $column-gutter: rem-calc(70);
 // $total-columns: 12;
 
 // We use these to control various global styles
@@ -856,7 +857,7 @@
 // $table-row-padding: rem-calc(9 10);
 // $table-row-font-size: rem-calc(14);
 // $table-row-font-color: #222;
-// $table-line-height: rem-calc(18);
+// $table-line-height: rem-calc(18)
 
 // These are for controlling the display and margin of tables
 // $table-display: table-cell;
