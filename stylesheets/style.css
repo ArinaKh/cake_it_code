@@ -9,29 +9,34 @@
 /* line 8, ../scss/style.sass */
 .lin a {
   padding-left: 5%;
+  color: white;
+  font-family: Serifiqo4FFreeCapitals;
 }
 
-/* line 12, ../scss/style.sass */
+/* line 14, ../scss/style.sass */
 .bg {
-  background-color: #d0904d;
+  background-color: #d6af82;
 }
-/* line 17, ../scss/style.sass */
+/* line 19, ../scss/style.sass */
 .bg img {
   padding-left: 3%;
 }
-/* line 22, ../scss/style.sass */
+/* line 24, ../scss/style.sass */
 .bg h2 {
   font-size: rem-calc(20);
+  font-family: Serifiqo4FFreeCapitals;
   color: white;
   padding-left: rem-calc(140);
   position: relative;
   bottom: rem-calc(30);
 }
 
-/* line 29, ../scss/style.sass */
+/* line 33, ../scss/style.sass */
 .bl {
-  background: #cccccc;
+  background: #d6af82;
   height: rem-calc(300);
   margin-left: rem-calc(20);
   margin-bottom: rem-calc(20);
+  margin-top: rem-calc(20);
+  padding-top: rem-calc(10);
 }

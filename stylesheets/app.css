@@ -7714,29 +7714,34 @@ th.hide-for-touch {
 /* line 8, ../scss/style.sass */
 .lin a {
   padding-left: 5%;
+  color: white;
+  font-family: Serifiqo4FFreeCapitals;
 }
 
-/* line 12, ../scss/style.sass */
+/* line 14, ../scss/style.sass */
 .bg {
-  background-color: #d0904d;
+  background-color: #d6af82;
 }
-/* line 17, ../scss/style.sass */
+/* line 19, ../scss/style.sass */
 .bg img {
   padding-left: 3%;
 }
-/* line 22, ../scss/style.sass */
+/* line 24, ../scss/style.sass */
 .bg h2 {
   font-size: 1.25rem;
+  font-family: Serifiqo4FFreeCapitals;
   color: white;
   padding-left: 8.75rem;
   position: relative;
   bottom: 1.875rem;
 }
 
-/* line 29, ../scss/style.sass */
+/* line 33, ../scss/style.sass */
 .bl {
-  background: #cccccc;
+  background: #d6af82;
   height: 18.75rem;
   margin-left: 1.25rem;
   margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+  padding-top: 0.625rem;
 }
