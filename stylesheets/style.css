@@ -40,3 +40,19 @@
   margin-top: rem-calc(20);
   padding-top: rem-calc(10);
 }
+
+/* line 42, ../scss/style.sass */
+.padding-right-10 {
+  padding-right: rem-calc(10);
+}
+
+/* line 45, ../scss/style.sass */
+.p {
+  padding: rem-calc(10) rem-calc(10) 0;
+}
+/* line 47, ../scss/style.sass */
+.p p {
+  text-align: center;
+  font-size: rem-calc(14);
+  color: white;
+}

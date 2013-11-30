@@ -7745,3 +7745,19 @@ th.hide-for-touch {
   margin-top: 1.25rem;
   padding-top: 0.625rem;
 }
+
+/* line 42, ../scss/style.sass */
+.padding-right-10 {
+  padding-right: 0.625rem;
+}
+
+/* line 45, ../scss/style.sass */
+.p {
+  padding: 0.625rem 0.625rem 0;
+}
+/* line 47, ../scss/style.sass */
+.p p {
+  text-align: center;
+  font-size: 0.875rem;
+  color: white;
+}
