@@ -1,0 +1,37 @@
+/* line 1, ../scss/style.sass */
+.lin {
+  float: right;
+  position: absolute;
+  bottom: rem-calc(40);
+  right: rem-calc(40);
+  width: 11rem;
+}
+/* line 8, ../scss/style.sass */
+.lin a {
+  padding-left: 5%;
+}
+
+/* line 12, ../scss/style.sass */
+.bg {
+  background-color: #d0904d;
+}
+/* line 17, ../scss/style.sass */
+.bg img {
+  padding-left: 3%;
+}
+/* line 22, ../scss/style.sass */
+.bg h2 {
+  font-size: rem-calc(20);
+  color: white;
+  padding-left: rem-calc(140);
+  position: relative;
+  bottom: rem-calc(30);
+}
+
+/* line 29, ../scss/style.sass */
+.bl {
+  background: #cccccc;
+  height: rem-calc(300);
+  margin-left: rem-calc(20);
+  margin-bottom: rem-calc(20);
+}
