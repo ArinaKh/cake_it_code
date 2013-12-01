@@ -15,9 +15,11 @@
 
 
 .bg
-  background-color: #d6af82 
-
-
+  background-image: url('../12.png')
+  height: rem-calc(256)
+  background-size: cover
+  background-position: center 
+  position-top: rem-calc(200)
 
   img
   
@@ -46,8 +48,7 @@
 
 
 .head_top
-  background-color: #deb183
-
+  background-color: #fff
   .logo
     padding-left: 3%
     padding-bottom: 0
@@ -56,18 +57,30 @@
 
 .head_btm
   .pc_bg 
-    background-image: url('../circ.png')
-    height: rem-calc(220)
+    
+    height: rem-calc(200)
     background-size: cover
     background-position: center bottom
 
 .pc
   
   margin:
-    top: rem-calc(-210)
+    top: rem-calc(-435)
+    left: rem-calc(700)
   img
-    width: rem-calc(650)
-    height: rem-calc(210)
+    width: rem-calc(360)
+    height: rem-calc(280)
+
+.pc2
+  position: absolute
+  right: rem-calc(600)
+  
+  margin:
+    top: rem-calc(-240)
+  
+  img
+    width: rem-calc(560)
+    height: rem-calc(150)
 
 .padding-right-10
   padding-right: rem-calc(10)
@@ -108,4 +121,43 @@
 .zag
   font-size: rem-calc(20)
   margin:
-    top: rem-calc(35)
+    top: rem-calc(-80)
+    left: rem-calc(580)
+
+
+.blg
+  width: rem-calc(150)
+  height: rem-calc(150)
+  background-color: #bf8f52
+  border-radius: 50%
+  +inline-block(top)
+
+  > div
+    background:
+      size: cover
+      position: center center
+      repeat: no-repeat
+    height: rem-calc(150)
+
+
+
+.ico_1
+  background-image: url('../1.png')
+
+
+.ico_2
+  background-image: url('../2.png')
+
+ 
+.ico_3
+  background-image: url('../3.png')
+
+.ico_4
+  background-image: url('../4.png')
+
+.container
+  margin-top: rem-calc(-50)
+
+
+.b_t
+  margin-top: 5%

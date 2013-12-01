@@ -169,7 +169,7 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: rem-calc(100%);
+  max-width: 100%;
   *zoom: 1;
 }
 /* line 165, ../bower_components/foundation/scss/foundation/components/_global.scss */
@@ -6717,7 +6717,7 @@ meta.foundation-mq-topbar {
 
   /* line 432, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .contain-to-grid .top-bar {
-    max-width: rem-calc(100%);
+    max-width: 100%;
     margin: 0 auto;
     margin-bottom: 0;
   }
@@ -7720,13 +7720,17 @@ th.hide-for-touch {
 
 /* line 17, ../scss/style.sass */
 .bg {
-  background-color: #d6af82;
+  background-image: url("../12.png");
+  height: 16rem;
+  background-size: cover;
+  background-position: center;
+  position-top: 12.5rem;
 }
-/* line 22, ../scss/style.sass */
+/* line 24, ../scss/style.sass */
 .bg img {
   padding-left: 3%;
 }
-/* line 27, ../scss/style.sass */
+/* line 29, ../scss/style.sass */
 .bg h2 {
   font-size: 1.25rem;
   color: white;
@@ -7735,7 +7739,7 @@ th.hide-for-touch {
   bottom: 1.875rem;
 }
 
-/* line 34, ../scss/style.sass */
+/* line 36, ../scss/style.sass */
 .bl {
   background: #d6af82;
   height: 18.75rem;
@@ -7746,11 +7750,11 @@ th.hide-for-touch {
 }
 
 /**MAIN** */
-/* line 48, ../scss/style.sass */
+/* line 50, ../scss/style.sass */
 .head_top {
-  background-color: #deb183;
+  background-color: white;
 }
-/* line 51, ../scss/style.sass */
+/* line 52, ../scss/style.sass */
 .head_top .logo {
   padding-left: 3%;
   padding-bottom: 0;
@@ -7758,41 +7762,53 @@ th.hide-for-touch {
   height: 3.125rem;
 }
 
-/* line 58, ../scss/style.sass */
+/* line 59, ../scss/style.sass */
 .head_btm .pc_bg {
-  background-image: url("../circ.png");
-  height: 13.75rem;
+  height: 12.5rem;
   background-size: cover;
   background-position: center bottom;
 }
 
-/* line 64, ../scss/style.sass */
+/* line 65, ../scss/style.sass */
 .pc {
-  margin-top: -13.125rem;
+  margin-top: -27.1875rem;
+  margin-left: 43.75rem;
 }
-/* line 68, ../scss/style.sass */
+/* line 70, ../scss/style.sass */
 .pc img {
-  width: 40.625rem;
-  height: 13.125rem;
+  width: 22.5rem;
+  height: 17.5rem;
 }
 
-/* line 72, ../scss/style.sass */
+/* line 74, ../scss/style.sass */
+.pc2 {
+  position: absolute;
+  right: 37.5rem;
+  margin-top: -15rem;
+}
+/* line 81, ../scss/style.sass */
+.pc2 img {
+  width: 35rem;
+  height: 9.375rem;
+}
+
+/* line 85, ../scss/style.sass */
 .padding-right-10 {
   padding-right: 0.625rem;
 }
 
-/* line 75, ../scss/style.sass */
+/* line 88, ../scss/style.sass */
 .p {
   padding: 0.625rem 0.625rem 0;
 }
-/* line 77, ../scss/style.sass */
+/* line 90, ../scss/style.sass */
 .p p {
   text-align: center;
   font-size: 0.875rem;
   color: white;
 }
 
-/* line 82, ../scss/style.sass */
+/* line 95, ../scss/style.sass */
 .button {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -7802,34 +7818,86 @@ th.hide-for-touch {
   background-color: #d6af82;
 }
 
-/* line 87, ../scss/style.sass */
+/* line 100, ../scss/style.sass */
 .pole {
   margin-top: 9.375rem;
   text-align: center;
 }
 
-/* line 91, ../scss/style.sass */
+/* line 104, ../scss/style.sass */
 .link {
   position: absolute;
   left: 17.5rem;
   margin-top: 2.5rem;
   width: 23.75rem;
 }
-/* line 97, ../scss/style.sass */
+/* line 110, ../scss/style.sass */
 .link a {
   padding-left: 2%;
   color: #444444;
   font-size: 0.875rem;
 }
 
-/* line 104, ../scss/style.sass */
+/* line 117, ../scss/style.sass */
 .bg_ft {
   height: 6.25rem;
   background-color: #e3e3e3;
 }
 
-/* line 108, ../scss/style.sass */
+/* line 121, ../scss/style.sass */
 .zag {
   font-size: 1.25rem;
-  margin-top: 2.1875rem;
+  margin-top: -5rem;
+  margin-left: 36.25rem;
+}
+
+/* line 128, ../scss/style.sass */
+.blg {
+  width: 9.375rem;
+  height: 9.375rem;
+  background-color: #bf8f52;
+  border-radius: 50%;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+/* line 135, ../scss/style.sass */
+.blg > div {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 9.375rem;
+}
+
+/* line 144, ../scss/style.sass */
+.ico_1 {
+  background-image: url("../1.png");
+}
+
+/* line 148, ../scss/style.sass */
+.ico_2 {
+  background-image: url("../2.png");
+}
+
+/* line 152, ../scss/style.sass */
+.ico_3 {
+  background-image: url("../3.png");
+}
+
+/* line 155, ../scss/style.sass */
+.ico_4 {
+  background-image: url("../4.png");
+}
+
+/* line 158, ../scss/style.sass */
+.container {
+  margin-top: -3.125rem;
+}
+
+/* line 162, ../scss/style.sass */
+.b_t {
+  margin-top: 5%;
 }
