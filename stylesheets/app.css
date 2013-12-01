@@ -40,7 +40,7 @@ meta.foundation-mq-xxlarge {
 /* line 322, ../bower_components/foundation/scss/foundation/components/_global.scss */
 html,
 body {
-  font-size: 100%;
+  font-size: 16px;
 }
 
 /* line 325, ../bower_components/foundation/scss/foundation/components/_global.scss */
@@ -7760,4 +7760,14 @@ th.hide-for-touch {
   text-align: center;
   font-size: 0.875rem;
   color: white;
+}
+
+/* line 52, ../scss/style.sass */
+.button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #d6af82;
 }
