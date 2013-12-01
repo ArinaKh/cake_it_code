@@ -1,4 +1,4 @@
-/* line 2, ../scss/style.sass */
+/* line 3, ../scss/style.sass */
 .lin {
   float: right;
   position: absolute;
@@ -7,21 +7,21 @@
   width: 11rem;
   color: white;
 }
-/* line 11, ../scss/style.sass */
+/* line 12, ../scss/style.sass */
 .lin a {
   padding-left: 5%;
   color: white;
 }
 
-/* line 16, ../scss/style.sass */
+/* line 17, ../scss/style.sass */
 .bg {
   background-color: #d6af82;
 }
-/* line 21, ../scss/style.sass */
+/* line 22, ../scss/style.sass */
 .bg img {
   padding-left: 3%;
 }
-/* line 26, ../scss/style.sass */
+/* line 27, ../scss/style.sass */
 .bg h2 {
   font-size: rem-calc(20);
   color: white;
@@ -30,20 +30,22 @@
   bottom: rem-calc(30);
 }
 
-/* line 33, ../scss/style.sass */
+/* line 34, ../scss/style.sass */
 .bl {
   background: #d6af82;
   height: rem-calc(300);
   margin-left: rem-calc(20);
   margin-bottom: rem-calc(20);
+  padding-top: rem-calc(10);
+  margin-top: rem-calc(20);
 }
 
 /**MAIN** */
-/* line 42, ../scss/style.sass */
+/* line 48, ../scss/style.sass */
 .head_top {
   background-color: #deb183;
 }
-/* line 45, ../scss/style.sass */
+/* line 51, ../scss/style.sass */
 .head_top .logo {
   padding-left: 3%;
   padding-bottom: 0;
@@ -51,7 +53,7 @@
   height: rem-calc(50);
 }
 
-/* line 52, ../scss/style.sass */
+/* line 58, ../scss/style.sass */
 .head_btm .pc_bg {
   background-image: url("../circ.png");
   height: rem-calc(220);
@@ -59,33 +61,33 @@
   background-position: center bottom;
 }
 
-/* line 58, ../scss/style.sass */
+/* line 64, ../scss/style.sass */
 .pc {
   margin-top: rem-calc(-210);
 }
-/* line 62, ../scss/style.sass */
+/* line 68, ../scss/style.sass */
 .pc img {
   width: rem-calc(650);
   height: rem-calc(210);
 }
 
-/* line 66, ../scss/style.sass */
+/* line 72, ../scss/style.sass */
 .padding-right-10 {
   padding-right: rem-calc(10);
 }
 
-/* line 69, ../scss/style.sass */
+/* line 75, ../scss/style.sass */
 .p {
   padding: rem-calc(10) rem-calc(10) 0;
 }
-/* line 71, ../scss/style.sass */
+/* line 77, ../scss/style.sass */
 .p p {
   text-align: center;
   font-size: rem-calc(14);
   color: white;
 }
 
-/* line 76, ../scss/style.sass */
+/* line 82, ../scss/style.sass */
 .button {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -95,33 +97,33 @@
   background-color: #d6af82;
 }
 
-/* line 81, ../scss/style.sass */
+/* line 87, ../scss/style.sass */
 .pole {
   margin-top: rem-calc(150);
   text-align: center;
 }
 
-/* line 85, ../scss/style.sass */
+/* line 91, ../scss/style.sass */
 .link {
   position: absolute;
   left: rem-calc(280);
   margin-top: rem-calc(40);
   width: rem-calc(380);
 }
-/* line 91, ../scss/style.sass */
+/* line 97, ../scss/style.sass */
 .link a {
   padding-left: 2%;
   color: #444444;
   font-size: rem-calc(14);
 }
 
-/* line 98, ../scss/style.sass */
+/* line 104, ../scss/style.sass */
 .bg_ft {
   height: rem-calc(100);
   background-color: #e3e3e3;
 }
 
-/* line 102, ../scss/style.sass */
+/* line 108, ../scss/style.sass */
 .zag {
   font-size: rem-calc(20);
   margin-top: rem-calc(35);
