@@ -1,61 +1,100 @@
-/*
-Syntax error: Undefined mixin 'border-radius'.
-        on line 73 of c:/Users/admin/git/cake_it_code/scss/style.sass, in `border-radius'
-        from line 73 of c:/Users/admin/git/cake_it_code/scss/style.sass
+/* line 3, ../scss/style.sass */
+.lin {
+  float: right;
+  position: absolute;
+  bottom: rem-calc(40);
+  right: rem-calc(40);
+  width: 11rem;
+}
+/* line 10, ../scss/style.sass */
+.lin a {
+  padding-left: 5%;
+}
 
-Backtrace:
-c:/Users/admin/git/cake_it_code/scss/style.sass:73:in `border-radius'
-c:/Users/admin/git/cake_it_code/scss/style.sass:73
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:7:in `visit'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/root_node.rb:20:in `render'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/engine.rb:315:in `_render'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/engine.rb:262:in `render'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/update_project.rb:45:in `perform'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `call'
-c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
-c:/Ruby200/bin/compass:23:in `load'
-c:/Ruby200/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'border-radius'.\A         on line 73 of c:/Users/admin/git/cake_it_code/scss/style.sass, in `border-radius'\A         from line 73 of c:/Users/admin/git/cake_it_code/scss/style.sass"; }
+/* line 14, ../scss/style.sass */
+.bg {
+  background-color: #d0904d;
+}
+/* line 19, ../scss/style.sass */
+.bg img {
+  padding-left: 3%;
+}
+/* line 24, ../scss/style.sass */
+.bg h2 {
+  font-size: rem-calc(20);
+  color: white;
+  padding-left: rem-calc(140);
+  position: relative;
+  bottom: rem-calc(30);
+}
+
+/* line 31, ../scss/style.sass */
+.bl {
+  background: #cccccc;
+  height: rem-calc(300);
+  margin-left: rem-calc(20);
+  margin-bottom: rem-calc(20);
+}
+
+/**MAIN** */
+/* line 40, ../scss/style.sass */
+.head_top {
+  background-color: #deb183;
+}
+/* line 43, ../scss/style.sass */
+.head_top .logo {
+  padding-left: 3%;
+  padding-bottom: 0;
+  width: rem-calc(150);
+  height: rem-calc(50);
+}
+
+/* line 50, ../scss/style.sass */
+.head_btm .pc_bg {
+  background-image: url("../circ.png");
+  height: rem-calc(220);
+  background-size: cover;
+  background-position: center bottom;
+}
+
+/* line 56, ../scss/style.sass */
+.pc {
+  margin-top: rem-calc(-210);
+}
+/* line 60, ../scss/style.sass */
+.pc img {
+  width: rem-calc(650);
+  height: rem-calc(210);
+}
+
+/* line 64, ../scss/style.sass */
+.padding-right-10 {
+  padding-right: rem-calc(10);
+}
+
+/* line 67, ../scss/style.sass */
+.p {
+  padding: rem-calc(10) rem-calc(10) 0;
+}
+/* line 69, ../scss/style.sass */
+.p p {
+  text-align: center;
+  font-size: rem-calc(14);
+  color: white;
+}
+
+/* line 74, ../scss/style.sass */
+.button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #d6af82;
+}
+
+/* line 78, ../scss/style.sass */
+.zag {
+  font-size: rem-calc(20);
+  margin-top: rem-calc(35);
+}
