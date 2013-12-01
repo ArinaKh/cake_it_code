@@ -7714,34 +7714,53 @@ th.hide-for-touch {
 /* line 8, ../scss/style.sass */
 .lin a {
   padding-left: 5%;
-  color: white;
-  font-family: Serifiqo4FFreeCapitals;
 }
 
-/* line 14, ../scss/style.sass */
+/* line 12, ../scss/style.sass */
 .bg {
-  background-color: #d6af82;
+  background-color: #d0904d;
 }
-/* line 19, ../scss/style.sass */
+/* line 17, ../scss/style.sass */
 .bg img {
   padding-left: 3%;
 }
-/* line 24, ../scss/style.sass */
+/* line 22, ../scss/style.sass */
 .bg h2 {
   font-size: 1.25rem;
-  font-family: Serifiqo4FFreeCapitals;
   color: white;
   padding-left: 8.75rem;
   position: relative;
   bottom: 1.875rem;
 }
 
-/* line 33, ../scss/style.sass */
+/* line 29, ../scss/style.sass */
 .bl {
-  background: #d6af82;
+  background: #cccccc;
   height: 18.75rem;
   margin-left: 1.25rem;
   margin-bottom: 1.25rem;
-  margin-top: 1.25rem;
-  padding-top: 0.625rem;
+}
+
+/**MAIN** */
+/* line 37, ../scss/style.sass */
+.head_top {
+  background-color: #deb183;
+}
+/* line 40, ../scss/style.sass */
+.head_top .logo {
+  padding-left: 3%;
+  padding-bottom: 0;
+}
+
+/* line 45, ../scss/style.sass */
+.head_btm .pc_bg {
+  background-image: url("../circ.png");
+  height: 18.75rem;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+/* line 51, ../scss/style.sass */
+.pc {
+  margin-top: -12.5rem;
 }
