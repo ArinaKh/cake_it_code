@@ -1,0 +1,415 @@
+<html><head>
+<meta charset="UTF-8">
+<title>Cake IT!</title>
+<script type="text/javascript" src="three.min.js"></script>
+<script type="text/javascript" src="cilinder.js"></script>
+<script type="text/javascript" src="cube.js"></script>
+<script type="text/javascript" src="cubik.js"></script>
+<script type="text/javascript" src="sfer.js"></script>
+<script type="text/javascript" src="tort.js"></script>
+<script type="text/javascript">
+
+/* Uses JSONLoader to load objects that have been saved
+ * in three.js's json format.  Requires the folder models-json
+ * that contains the seven sample models.
+ */
+
+var renderer;  // A three.js WebGL or Canvas renderer.
+var scene;     // The 3D scene that will be rendered, containing the model.
+var camera;    // The camera that takes the picture of the scene.
+
+var model; // The three.js object that represents the model.
+
+var rotateX = 0;   // rotation of model about the x-axis
+var rotateY = 0;  // rotation of model about the y-axis
+var rotate2X = 0;   // rotation of model about the x-axis
+var rotate2Y = 0;
+var sw=0;
+var menu_ch=null;
+var menu_chs=null;
+var mp_2draw = 0;
+
+
+/*  This function is called by the init() method.  It simply adds
+ *  a light to the scene.  Objects are added later by the loader callback.
+ */
+function createWorld() {
+    var light;  // A light shining from the direction of the camera.
+    light = new THREE.DirectionalLight();
+    light.position.set(0,0,1);
+    scene.add(light);
+}
+
+/**
+ * The callback function that is called by the JSONLoader when it
+ * has finished loading the object.  This function creates a three.js
+ * function to hold the object.  It translates the object so that
+ * its center is in the origin.  It wraps the object in another object
+ * that is used to scale and rotate the object.  The scale is set
+ * so that the maximum coordinate in its vertices, in absolute
+ * value, is scaled to 10.  The rotation is controlled by the arrow
+ * keys.
+ */ 
+ var new_cube = {
+    x:0,
+    y:0,
+    z:0
+ }
+ var ms_vr = {
+    x:0,
+    y:2, //2
+    z:0
+ }
+function modelLoadedCallback(geometry, materials) {
+
+    /* create the object from the geometry and materials that were loaded.  There
+       can be multiple materials, which can be applied to the object using MeshFaceMaterials.
+       Note tha the material can include references to texture images might finish
+       loading later. */
+       
+    var object = new THREE.Mesh(geometry, new THREE.MeshFaceMaterial(materials));
+
+    /* Determine the ranges of x, y, and z in the vertices of the geometry. */
+
+    var xmin = Infinity;
+    var xmax = -Infinity;
+    var ymin = Infinity;
+    var ymax = -Infinity;
+    var zmin = Infinity;
+    var zmax = -Infinity;
+    for (var i = 0; i < geometry.vertices.length; i++) {
+        var v = geometry.vertices[i];
+        if (v.x < xmin)
+            xmin = v.x;
+        else if (v.x > xmax)
+            xmax = v.x;
+        if (v.y < ymin)
+            ymin = v.y;
+        else if (v.y > ymax)
+            ymax = v.y;
+        if (v.z < zmin)
+            zmin = v.z;
+        else if (v.z > zmax)
+            zmax = v.z;
+    }
+    
+    /* translate the center of the object to the origin */
+    var centerX = (xmin+xmax)/2;
+    var centerY = (ymin+ymax)/2; 
+    var centerZ = (zmin+zmax)/2;
+    var max = Math.max(centerX - xmin, xmax - centerX);
+    max2 = Math.max(max, Math.max(centerY - ymin, ymax - centerY) );
+    max2 = Math.max(max, Math.max(centerZ - zmin, zmax - centerZ) );
+    max = Math.max(max, Math.max(centerY - ymin, ymax - centerY) );
+    max = Math.max(max, Math.max(centerZ - zmin, zmax - centerZ) );
+    var scale = 5/max; //    10/max
+    object.position.set( -centerX, -centerY, -centerZ );
+    console.log("Loading finished, scaling object by " + scale);
+    console.log("Center at ( " + centerX + ", " + centerY + ", " + centerZ + " )");
+    
+    /* Create the wrapper, model, to scale and rotate the object. */
+    
+    var model = new THREE.Object3D();
+    model.add(object);
+    model.scale.set(scale,scale,scale);
+    rotateX = rotateY = 0;
+    return model;
+}
+
+
+/**
+ * Called when the setting of the model-selection radio buttons is changed.
+ * starts loading the model from the specified file and sets the background
+ * color for the renderer (since black background doesn't work for all
+ * of the models.
+ */
+function installModel(model_data, bgColor) { 
+    if (model) {
+        scene.remove(model);
+    }
+    renderer.setClearColor(bgColor);
+    render();
+    var loader = new THREE.JSONLoader();
+    //loader.load("models-json/" + file, modelLoadedCallback);
+    result = loader.parse(model_data, '');
+    model = modelLoadedCallback( result.geometry, result.materials );
+
+    /*result_2 = loader.parse(cube, '');
+    model_2 = modelLoadedCallback( result_2.geometry, result_2.materials );
+    model_2.position.set(-30,-20,0);
+    model_2.scale.set(0.2,0.4,0.6);
+    model.add(model_2);*/
+
+    scene.add(model);
+    render();
+}
+
+//model_s.position.set(position2.x,position2.y,position2.z);
+
+/**
+ *  The render fucntion creates an image of the scene from the point of view
+ *  of the camera and displays it in the canvas.  This is called at the end of
+ *  init() to produce the initial view of the model, and it is called each time
+ *  the user presses an arrow key, return, or home.
+ */
+function render() {
+    renderer.render(scene, camera);
+}
+
+/**
+ *  An event listener for the keydown event.  It is installed by the init() function.
+ */
+function doKey(evt) { 
+    var rotationChanged = true;
+    position = model.position;
+    console.log(evt.keyCode);
+	switch (evt.keyCode) {
+	    case 37: rotateY -= 0.05; break;        // left arrow (rotate2Y += 0.05;)
+        case 39: rotateY += 0.05; break;        // right arrow(rotate2Y -= 0.05;)
+        case 38: rotateX -= 0.05; break;        // up arrow (rotate2X += 0.05;)
+	    case 40: rotateX += 0.05; break;        // down arrow (rotate2X -= 0.05;)
+        case 65: position.x -= 0.5; break;      // A
+        case 68: position.x += 0.5; break;      // D
+        case 83: position.y -= 0.5; break;      // S
+        case 87: position.y += 0.5; break;      // W
+	    case 13: rotateX = rotateY = 0; position.set(0,0,0); break;  // return
+		case 109: rotateX = rotateX - 2; break; // -1
+		case 107: rotateX = rotateX + 2; break; // +1
+		case 104: camera.position.z = camera.position.z + 1; break; // клавиша 8 около намлока
+		case 98: camera.position.z = camera.position.z - 1; break;
+	    case 36: rotateX = rotateY = 0; position.set(0,0,0); break;  // home
+        //case 123: alert(rotateX);
+	    default: rotationChanged = false;
+	}
+	if (model && rotationChanged) {
+       model.rotation.set(rotateX,rotateY,0);	
+       model.position.set(position.x,position.y,position.z);
+       render();
+	   evt.preventDefault();
+	}
+}
+
+/**
+ *  This function is called by the onload event so it will run after the
+ *  page has loaded.  It creates the renderer, canvas, and scene objects,
+ *  calls createWorld() to add objects to the scene, and renders the
+ *  initial view of the scene.  If an error occurs, it is reported.
+ */
+function init() {
+    try {
+        var theCanvas = document.getElementById("cnvs");
+        if (!theCanvas || !theCanvas.getContext) {
+            document.getElementById("message").innerHTML = 
+                             "Sorry, your browser doesn't support canvas graphics.";
+            return;
+        }
+        try {  // try to create a WebGLRenderer
+            if (window.WebGLRenderingContext) {
+                renderer = new THREE.WebGLRenderer( { 
+                   canvas: theCanvas, 
+                   antialias: true
+                } );
+            } 
+        }
+        catch (e) {
+        }
+        if (!renderer) { // If the WebGLRenderer couldn't be created, try a CanvasRenderer.
+            renderer = new THREE.CanvasRenderer( { canvas: theCanvas } );
+            renderer.setSize(theCanvas.width,theCanvas.height);
+            document.getElementById("message").innerHTML =
+                          "WebGL not available; falling back to CanvasRenderer.";
+        }
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(50, theCanvas.width/theCanvas.height, 0.1, 100);
+        camera.position.z = 30;
+        createWorld();
+        installModel(tort); // (cake)
+
+        render();
+        document.addEventListener("keydown", doKey, false);
+        document.getElementById("r1").checked = true;
+     }
+     catch (e) {
+        document.getElementById("message").innerHTML = "Sorry, an error occurred: " + e;
+     }
+}
+function add_new_model_a()
+{
+    var loader = new THREE.JSONLoader();
+    //result_2 = loader.parse(cube, '');
+    if(menu_chs==1 && menu_ch==0)
+    {
+        var result_2 = loader.parse(cube, '');
+    }
+    else;
+    if(menu_ch==1 && menu_chs==0)
+    {
+        var result_2 = loader.parse(sfer, '');
+    }
+    else;
+    //var result_2 = loader.parse(sfer, '');
+    var model_2 = modelLoadedCallback( result_2.geometry, result_2.materials );
+    //model_2.position.set(-15,-2,0);
+    //ms_vr.x(and "y")
+    //ms_vr.x = ms_vr.x-5;
+    //model_2.position.set(ms_vr.x,ms_vr.y,0); // x-15,y-2
+    model_2.position.set(mp_2draw,ms_vr.y,ms_vr.z);
+    //model_2.scale.set(0.2,0.4,0.6);
+    //model_2.scale.set(0.149,0.15,0.2);
+    model_2.scale.set(0.04,0.0405,0.045); //y=0.045,z=0.15
+    model.add(model_2);
+    render();
+}
+function add_new_model_a_cube()
+{
+    var loader = new THREE.JSONLoader();
+    //result_2 = loader.parse(cube, '');
+    var result_2 = loader.parse(sfer, '');
+    var model_2 = modelLoadedCallback( result_2.geometry, result_2.materials );
+    //model_2.position.set(-15,-2,0);
+    //ms_vr.x(and "y")
+    //ms_vr.x = ms_vr.x-5;
+    //model_2.position.set(ms_vr.x,ms_vr.y,0); // x-15,y-2
+    model_2.position.set(new_cube.x,new_cube.x,new_cube.x);
+    //model_2.scale.set(0.2,0.4,0.6);
+    //model_2.scale.set(0.149,0.15,0.2);
+    model_2.scale.set(0.04,0.0405,0.045); //y=0.045,z=0.15
+    model.add(model_2);
+    render();
+}
+function add_new_model()
+{
+    var loader = new THREE.JSONLoader();
+    //result_2 = loader.parse(cube, '');
+    result_2 = loader.parse(sfer, '');
+    model_2 = modelLoadedCallback( result_2.geometry, result_2.materials );
+    //
+    result_3 = loader.parse(cubik, '');
+    model_3 = modelLoadedCallback( result_3.geometry, result_3.materials );
+    //
+    //model_2.position.set(-15,-2,0);
+    model_2.position.set(-15,-2,0);
+    model_3.position.set(0,15,0);
+    //model_2.scale.set(0.2,0.4,0.6);
+    model_2.scale.set(0.59,0.6,0.6);
+    model_3.scale.set(0.59,0.6,0.6);
+    model.add(model_2);
+    render();
+    model.add(model_3);
+    render();
+}
+</script>
+</head>
+<body onload="init()" bgcolor="#FFF">
+    <div class="header">
+        <style>
+        .header {
+          height:10%;
+           width:100%; 
+           background-color:#bf8f52;
+        }
+        </style>
+        <h2 style="font-size:50px; font-family:Arial; padding-left:10px; padding-top:20px;"><i>Cake it!</i></h2>
+    </div>
+
+
+<noscript>
+&lt;p style="color: #A00; font-weight: bold"&gt;Sorry, but this page requires JavaScript!&lt;/p&gt;
+</noscript>
+
+</br>
+    <div style="float:left;margin-left:5%;">
+        <p><input type="radio" name="model" id="r1" onchange="installModel(tort,0x000)"> <label for="r1">Tort</label><br>
+<p><input type="radio" name="model" id="r7" onchange="menu_chs=1;menu_ch=0;alert('Выбрано.');"> <label for="r7">Cube</label><br>
+<p><input type="radio" name="model" id="r2" onchange="add_new_model_a()"> <label for="r2">Cake</label><br>
+<p><input type="radio" name="model" id="r4" onchange="installModel(cubik,0x000)"> <label for="r4">Cubik</label><br>
+<p><input type="radio" name="model" id="r5" onchange="installModel(cylynd,0x000)"> <label for="r5">Cylender</label><br>
+<p><input type="radio" name="model" id="r6" onchange="menu_ch=1;menu_chs=0;alert('Выбрано');"> <label for="r6">SFERA</label></p>
+
+    </div>
+    <center>
+   <canvas width="1000" height="800" id="cnvs" style="background-color:0x000;"></canvas>
+<script>
+document.getElementById("cnvs").onclick=function()
+{
+    //alert("X="+event.clientX+" | Y="+event.clientY);
+    //500-550 по оси Y
+    if(menu_ch==1 || menu_chs==1)
+    {
+    var mx = event.clientX;
+    if(event.clientY>495 && event.clientY<555)
+    {
+    if(mx>900 && mx<960)
+    {
+        mp_2draw=-4;
+        //y=2
+        ms_vr.y=2;
+        ms_vr.z=0;
+        add_new_model_a();
+    }
+    else if(mx>960 && mx<1020)
+    {
+        mp_2draw=-2;
+        //y=2
+        ms_vr.y=2;
+        ms_vr.z=0;
+        add_new_model_a();
+    }
+    else if(mx>1020 && mx<1080)
+    {
+        mp_2draw=0;
+        //y=2
+        ms_vr.y=2;
+        ms_vr.z=0;
+        add_new_model_a();
+    }
+    else;
+    }
+    else if(event.clientY>555) // если по оси y другое значение(условие иначе) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    {
+        //
+        if(mx>900 && mx<960)
+        {
+        mp_2draw=-4;
+        //y=2
+        ms_vr.y=2;
+        ms_vr.z=1.5;
+        add_new_model_a();
+        }
+    else if(mx>960 && mx<1020)
+        {
+        mp_2draw=-2;
+        //y=2
+        ms_vr.y=2;
+        ms_vr.z=1.5;
+        add_new_model_a();
+        }
+    else if(mx>1020 && mx<1080)
+        {
+        mp_2draw=0;
+        //y=2
+        ms_vr.y=2;
+        ms_vr.z=1.5;
+        add_new_model_a();
+        }
+    else;
+    }
+    else;
+    }
+    else
+    {
+        alert("Выбери наложение.");
+    }
+}
+</script>
+</center>
+</div>
+
+<div style="float:left; margin-left:2cm">
+
+</p>
+</div>
+
+
+
+</body></html>
