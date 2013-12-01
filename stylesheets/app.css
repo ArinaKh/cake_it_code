@@ -7703,28 +7703,30 @@ th.hide-for-touch {
   display: table-cell !important;
 }
 
-/* line 3, ../scss/style.sass */
+/* line 2, ../scss/style.sass */
 .lin {
   float: right;
   position: absolute;
   bottom: 2.5rem;
   right: 2.5rem;
   width: 11rem;
+  color: white;
 }
-/* line 10, ../scss/style.sass */
+/* line 11, ../scss/style.sass */
 .lin a {
   padding-left: 5%;
+  color: white;
 }
 
-/* line 14, ../scss/style.sass */
+/* line 16, ../scss/style.sass */
 .bg {
-  background-color: #d0904d;
+  background-color: #d6af82;
 }
-/* line 19, ../scss/style.sass */
+/* line 21, ../scss/style.sass */
 .bg img {
   padding-left: 3%;
 }
-/* line 24, ../scss/style.sass */
+/* line 26, ../scss/style.sass */
 .bg h2 {
   font-size: 1.25rem;
   color: white;
@@ -7733,20 +7735,20 @@ th.hide-for-touch {
   bottom: 1.875rem;
 }
 
-/* line 31, ../scss/style.sass */
+/* line 33, ../scss/style.sass */
 .bl {
-  background: #cccccc;
+  background: #d6af82;
   height: 18.75rem;
   margin-left: 1.25rem;
   margin-bottom: 1.25rem;
 }
 
 /**MAIN** */
-/* line 40, ../scss/style.sass */
+/* line 42, ../scss/style.sass */
 .head_top {
   background-color: #deb183;
 }
-/* line 43, ../scss/style.sass */
+/* line 45, ../scss/style.sass */
 .head_top .logo {
   padding-left: 3%;
   padding-bottom: 0;
@@ -7754,7 +7756,7 @@ th.hide-for-touch {
   height: 3.125rem;
 }
 
-/* line 50, ../scss/style.sass */
+/* line 52, ../scss/style.sass */
 .head_btm .pc_bg {
   background-image: url("../circ.png");
   height: 13.75rem;
@@ -7762,33 +7764,33 @@ th.hide-for-touch {
   background-position: center bottom;
 }
 
-/* line 56, ../scss/style.sass */
+/* line 58, ../scss/style.sass */
 .pc {
   margin-top: -13.125rem;
 }
-/* line 60, ../scss/style.sass */
+/* line 62, ../scss/style.sass */
 .pc img {
   width: 40.625rem;
   height: 13.125rem;
 }
 
-/* line 64, ../scss/style.sass */
+/* line 66, ../scss/style.sass */
 .padding-right-10 {
   padding-right: 0.625rem;
 }
 
-/* line 67, ../scss/style.sass */
+/* line 69, ../scss/style.sass */
 .p {
   padding: 0.625rem 0.625rem 0;
 }
-/* line 69, ../scss/style.sass */
+/* line 71, ../scss/style.sass */
 .p p {
   text-align: center;
   font-size: 0.875rem;
   color: white;
 }
 
-/* line 74, ../scss/style.sass */
+/* line 76, ../scss/style.sass */
 .button {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -7798,7 +7800,33 @@ th.hide-for-touch {
   background-color: #d6af82;
 }
 
-/* line 78, ../scss/style.sass */
+/* line 81, ../scss/style.sass */
+.pole {
+  margin-top: 9.375rem;
+  text-align: center;
+}
+
+/* line 85, ../scss/style.sass */
+.link {
+  position: absolute;
+  left: 17.5rem;
+  margin-top: 2.5rem;
+  width: 23.75rem;
+}
+/* line 91, ../scss/style.sass */
+.link a {
+  padding-left: 2%;
+  color: #444444;
+  font-size: 0.875rem;
+}
+
+/* line 98, ../scss/style.sass */
+.bg_ft {
+  height: 6.25rem;
+  background-color: #e3e3e3;
+}
+
+/* line 102, ../scss/style.sass */
 .zag {
   font-size: 1.25rem;
   margin-top: 2.1875rem;
